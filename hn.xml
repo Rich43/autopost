@@ -1,0 +1,97 @@
+<autopost>
+    <item>
+        <url>http://pyday.pynguins.com/login</url>
+        <postitems>
+            <postitem>
+                <type>string</type>
+                <key>name</key>
+                <value>Richie</value>
+            </postitem>
+            <postitem>
+                <type>string</type>
+                <key>pswd</key>
+                <value>rewrich</value>
+            </postitem>
+        </postitems>
+    </item>
+    <item>
+        <url>http://pyday.pynguins.com/post/postcomment/</url>
+        <postitems>
+            <postitem>
+                <type>string</type>
+                <key>postid</key>
+                <value>2</value>
+            </postitem>
+            <postitem>
+                <type>string</type>
+                <key>name</key>
+                <value>Anonymous Spammer</value>
+            </postitem>
+            <postitem>
+                <type>string</type>
+                <key>content</key>
+                <value>YOU HAS NO SPAM PROTECTION</value>
+            </postitem>
+        </postitems>
+    </item>
+    <item>
+        <url>http://pyday.pynguins.com/post/postcomment/</url>
+        <postitems>
+            <postitem>
+                <type>string</type>
+                <key>postid</key>
+                <value>2</value>
+            </postitem>
+            <postitem>
+                <type>string</type>
+                <key>name</key>
+                <value>Anonymous Spammer</value>
+            </postitem>
+            <postitem>
+                <type>string</type>
+                <key>content</key>
+                <value>YOU HAS NO SPAM PROTECTION</value>
+            </postitem>
+        </postitems>
+    </item>
+    <item>
+        <url>http://pyday.pynguins.com/post/postcomment/</url>
+        <postitems>
+            <postitem>
+                <type>string</type>
+                <key>postid</key>
+                <value>2</value>
+            </postitem>
+            <postitem>
+                <type>string</type>
+                <key>name</key>
+                <value>Anonymous Spammer</value>
+            </postitem>
+            <postitem>
+                <type>string</type>
+                <key>content</key>
+                <value>YOU HAS NO SPAM PROTECTION</value>
+            </postitem>
+        </postitems>
+    </item>
+    <item>
+        <url>http://pyday.pynguins.com/post/postcomment/</url>
+        <postitems>
+            <postitem>
+                <type>string</type>
+                <key>postid</key>
+                <value>2</value>
+            </postitem>
+            <postitem>
+                <type>string</type>
+                <key>name</key>
+                <value>Anonymous Spammer</value>
+            </postitem>
+            <postitem>
+                <type>string</type>
+                <key>content</key>
+                <value>YOU HAS NO SPAM PROTECTION</value>
+            </postitem>
+        </postitems>
+    </item>
+</autopost>

@@ -1,0 +1,56 @@
+#!/usr/bin/python
+import sys
+import os
+from StringIO import StringIO
+import time, pycurl
+from xml.etree.ElementTree import ElementTree
+
+class Downloader:
+    def __init__(self):
+        self.clear()
+    def clear(self):
+        self.contents = ''
+    def body_callback(self, buf):
+        self.contents = self.contents + buf
+        
+    def geturl(self, url, postdata=None):
+        self.clear()
+        c = pycurl.Curl()
+        c.setopt(c.URL, url)
+        c.setopt(c.WRITEFUNCTION, self.body_callback)
+        c.setopt(c.USERAGENT, "Mozilla/5.0 (X11; U; Linux i686; en-GB; rv:1.8.1.12) Gecko/20080207 Ubuntu/7.10 (gutsy)")
+        c.setopt(c.COOKIEFILE, "cookie.txt")
+        c.setopt(c.COOKIEJAR, "cookie.txt")
+        c.setopt(c.FOLLOWLOCATION, 1)
+        c.setopt(c.TIMEOUT, 30)
+        if postdata:
+            c.setopt(c.HTTPPOST, postdata)
+        c.perform()
+        c.close()
+        
+def main():
+    d = Downloader()
+    etree = ElementTree(file="hn.xml")
+    i = 0
+    for item in etree.findall("item"):
+        postitems = item.find("postitems")
+        urltag = item.find("url")
+        pf = []
+        if postitems:
+            for postitem in postitems.findall("postitem"):
+                pidict = {}
+                for postitemele in postitem:
+                    pidict[postitemele.tag] = postitemele.text
+                if pidict["type"] == "string":
+                    pf.append((pidict["key"], pidict["value"]))
+                if pidict["type"] == "file":
+                    c = pycurl.Curl()
+                    pf.append((pidict["key"], (c.FORM_FILE, pidict["value"])))
+                    c.close()
+        i += 1
+        d.geturl(urltag.text, pf)
+        open("%s.html" % str(i), "w").write(d.contents)
+        print "item", i, "done."
+    print "OK"
+if __name__ == '__main__':
+    main()
